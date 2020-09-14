@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Plan My Trip</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="http://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+    <link href="~/Content/default.css" rel="stylesheet" type="text/css" media="all">
+    <link href="~/Content/fonts.css" rel="stylesheet" type="text/css" media="all">
+    @Styles.Render("~/Content/jqueryui")
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header-wrapper">
+            <div id="header" class="container">
+                @*<div id="banner"> <a ref="#" class="image"><img src="~/Content/images/Flight3.jpg" alt=""></a> </div>*@
+                <div id="logo">
+                    @*<h1>Plan My Trip</h1>
+                        <div>
+
+                            <p>Design by Praveen Kumar</a></p>
+
+                        </div>*@
+                </div>
+
+            </div>
+        </div>
+        <div id="menu-wrapper">
+            <div id="menu" class="container">
+
+                <ul>
+                    <li class="current_page_item">
+                        @Html.ActionLink("Home Page", "ShowHome", "User")
+                    </li>
+
+                    @{ 
+                        if (Session["role"] != null)
+                        {
+                            if ((string)Session["role"] == "admin")
+                            {
+                    <li> @Html.ActionLink("Flight Admin", "GetFlights", "Flight")</li>
+                    <li> @Html.ActionLink("Airport Admin", "GetAirport", "Airport")</li>
+                    <li> @Html.ActionLink("Flight Schedules Admin", "FlightSchedules", "FlightSchedule")</li>
+                            }
+                        }
+                        }
+
+                </ul>
+
+            </div>
+            <!-- end #menu -->
+        </div>
+
+
+        <div class="title">
+
+            <h1>
+
+                Plan your trip with us to make it the best
+            </h1>
+
+            <div class="SignUpPara">
+
+                <p style="text-align:justify">
+                    <a href="#">@Html.ActionLink("Sign up", "Register", "User")</a>|
+
+                    <a href="#">@Html.ActionLink("Login", "Login", "User")</a>
+                </p>
+            </div>
+
+
+
+
+        </div>
+        <div id="sidebar">
+            <div class="">
+                <ul class="style2">
+                    @{ 
+                        if (Session["role"] != null)
+                        {
+
+                            if ((string)Session["role"] == "user")
+                            {
+                        @Html.ActionLink("Search Flights", "SearchFlights", "User")
+                                }
+                            }
+                        }
+                </ul>
+            </div>
+        </div>
+    </div>
+    @*</div>*@
+    <div class="container">
+        @RenderBody()
+
+    </div>
+    <hr />
+    <footer>
+        <div id="copyright" class="container">
+            <p>© Untitled. All rights reserved. |  Design by Praveen Kumar - Software Developer.</p>
+        </div>
+    </footer>
+    @*<div id="footer-wrapper">
+            <div id="footer" class="container">
+                <div id="box1">
+                    <div class="title">
+                        <h2>Latest Post</h2>
+                    </div>
+                    <ul class="style1">
+                        <li><a href="#">Semper mod quis eget mi dolore</a></li>
+                        <li><a href="#">Quam turpis feugiat sit dolor</a></li>
+                        <li><a href="#">Amet ornare in hendrerit in lectus</a></li>
+                        <li><a href="#">Consequat etiam lorem phasellus</a></li>
+                        <li><a href="#">Amet turpis, feugiat et sit amet</a></li>
+                        <li><a href="#">Semper mod quisturpis nisi</a></li>
+                    </ul>
+                </div>
+                <div id="box2">
+                    <div class="title">
+                        <h2>Popular Links</h2>
+                    </div>
+                    <ul class="style1">
+                        <li><a href="#">Semper mod quis eget mi dolore</a></li>
+                        <li><a href="#">Quam turpis feugiat sit dolor</a></li>
+                        <li><a href="#">Amet ornare in hendrerit in lectus</a></li>
+                        <li><a href="#">Consequat etiam lorem phasellus</a></li>
+                        <li><a href="#">Amet turpis, feugiat et sit amet</a></li>
+                        <li><a href="#">Semper mod quisturpis nisi</a></li>
+                    </ul>
+                </div>
+                <div id="box3">
+                    <div class="title">
+                        <h2>Follow Us</h2>
+                    </div>
+                    <p>Proin eu wisi suscipit nulla suscipit interdum. Aenean lectus lorem, imperdiet magna.</p>
+                    <ul class="contact">
+                        <li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+                        <li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+                        <li><a href="#" class="icon icon-dribbble"><span>Dribbble</span></a></li>
+                        <li><a href="#" class="icon icon-tumblr"><span>Tumblr</span></a></li>
+                        <li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+                    </ul>
+                    <a href="#" class="icon icon-plus-sign button">Read More</a>
+                </div>
+            </div>
+        </div>*@
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @Scripts.Render("~/bundles/jqueryval")
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jqueryui")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.datetimepicker').datepicker({
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-60:+0"
+            });
+        });
+    </script>
+</body>
+</html>
+

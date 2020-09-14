@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df6c9b6abd274fe9a2418493cc15711d" Name="Diagram1">
+        <EntityTypeShape EntityType="PlanMyTripModel.Airport" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlanMyTripModel.Flight" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlanMyTripModel.FlightSchedule" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlanMyTripModel.Itinerary" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlanMyTripModel.Role" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlanMyTripModel.User" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlanMyTripModel.Passenger" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="PlanMyTripModel.FK__FlightSch__Desti__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="PlanMyTripModel.FK__FlightSch__Origi__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="PlanMyTripModel.FK__FlightSch__Fligh__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="PlanMyTripModel.FK__Itinerary__Sched__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="PlanMyTripModel.FK__Itinerary__Passe__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="PlanMyTripModel.FK__Users__RoleId__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="PlanMyTripModel.FK__Passenger__Passe__29572725" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

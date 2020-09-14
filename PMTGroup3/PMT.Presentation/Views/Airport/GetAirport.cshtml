@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PMT.Presentation.Models.AirportModel>
+
+@{
+    ViewBag.Title = "GetAirport";
+}
+
+<h2>GetAirport</h2>
+
+<p>
+    @Html.ActionLink("Add Airport", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AirportCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AirportName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AirportCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AirportName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UpdateAirport", new {  id=item.AirportCode  }) |
+           
+            @Html.ActionLink("Delete", "RemoveAirport", new { AirportCode=item.AirportCode  })
+        </td>
+    </tr>
+}
+
+</table>

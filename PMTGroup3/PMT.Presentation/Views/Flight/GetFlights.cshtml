@@ -1,0 +1,50 @@
+﻿@model IEnumerable<PMT.Presentation.Models.FlightModel>
+
+@{
+    ViewBag.Title = "GetFlights";
+}
+
+<h2>GetFlights</h2>
+
+<p>
+    @Html.ActionLink("Add Flight", "AddFlights")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatsCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfSeatsAvailable)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeatsCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfSeatsAvailable)
+        </td>
+        <td>
+            @Html.ActionLink("Update", "UpdateFlight", new {  FlightNumber =item.FlightNumber  })           
+            @Html.ActionLink("Delete", "RemoveFlight", new {  FlightNumber =item.FlightNumber })
+        </td>
+    </tr>
+}
+
+</table>

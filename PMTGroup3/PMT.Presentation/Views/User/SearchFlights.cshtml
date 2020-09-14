@@ -1,0 +1,74 @@
+﻿@model IEnumerable<PMT.Presentation.Models.FlightScheduleModel>
+
+@{
+    ViewBag.Title = "SearchFlights";
+}
+
+<h2>SearchFlights</h2>
+
+@using (Html.BeginForm())
+{
+   
+
+<div class="form-horizontal">
+    
+
+    <div class="form-group">
+        @Html.Label("Origin") : @Html.TextBox("origin") <br />
+        @Html.Label("Destination") : @Html.TextBox("destination") <br />
+        @Html.Label("Departure") : @Html.TextBox("departure") <br />
+        <input type="submit" value="Search" />
+    </div>
+
+</div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Origin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvailableSeats)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Origin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Destination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartureTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvailableSeats)
+        </td>
+        
+    </tr>
+    }
+
+</table>
